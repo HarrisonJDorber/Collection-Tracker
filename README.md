@@ -1,2 +1,2 @@
 # Collection-Tracker
-A little personal project I made to help me keep track of my hobby of collecting anything and everything.
+A little personal project I made to help me keep track of my hobby of collecting anything and everything. I wanted to make a place where I could keep track of everything, regardless of what kind of item it was. Whether it was trading cards, or vinyls, or manga, I can find it all in one place. I find it really annoying when I want to buy more but can't remember what I have and what I dont yet own so hopefully this makes that problem a little less annoying. At the moment it also displays basic information about each collection you have but I plan to add more data in the future.
