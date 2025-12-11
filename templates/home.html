@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Collection Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div id="app">
+        
+        <div id="header">
+            <div id="header-wrap">
+                <h1>My Collection Tracker</h1>
+                <h2 id="subtitle"> Organise, value, and explore everything you collect</h2>
+            </div>
+            <button id="clear-data"> Clear all data</button>
+        </div>
+
+        <div id="collections">
+            <div id="sidebar">
+                <div id="sidebar-header">
+                    <h2>Collections</h2>
+                    <button id="add-collection-btn">+</button>
+                </div>
+                <div id="sidebar-empty-message">
+                    <h2>No collections yet</h2>
+                </div>
+                <ul id="collection-list">
+                    <!-- Collection items will be dynamically inserted here -->
+                </ul>
+            </div>
+
+            <div id="main-content">
+                <div id="main-empty-message">
+                    <h2>No collections yet</h2>
+                    <p>Start by adding your first collection!</p>
+                    <button id="add-collection-btn-main">Add Collection</button>
+                </div>
+
+                <form id="collection-form">
+                        <input type="text" id="collection-name" name="collection-name" placeholder="New Collection">
+                        <input type="text" id="collection-description" name="collection-description" placeholder="Describe what you collect in this group.">
+
+                    <div id="collection-form-extras">
+                        <input type="text" id="collection-category" name="collection-category" placeholder="What kind of collection? e.g: trading cards, vinyl, manga">
+                        <label for="collection-color">Collection Colour: </label>
+                        <input type="color" id="collection-color" name="collection-color">
+                    </div>
+                </form>
+
+                <div id="stats">
+                    <h2>Collection Stats</h2>
+                    <p id="total-items">Total Items: 0</p>
+                    <p id="total-value">Total Value: £0.00</p>
+                </div>
+
+                <div id="items">
+                    
+                    <div id="items-header">
+                        <h2>Items</h2>
+                        <button id="add-item-btn">+</button>
+                    </div>
+
+                    <div id="items-search">
+                        <input type="search" id="search-bar" placeholder="Search collections...">
+                        <select id="filter-status">
+                            <option value="">Status</option>
+                            <option value="owned">Owned</option>
+                            <option value="wishlist">Wishlist</option>
+                            <option value="ordered">Ordered</option>
+                        </select>
+                        <select id="sort-by">
+                            <option value="sort-by-name">Sort by name</option>
+                            <option value="sort-by-date">Sort by date</option>
+                            <option value="sort-by-value">Sort by value</option>
+                        </select>
+                    </div>
+
+                    <ul id="item-list">
+                    <!-- Item entries will be dynamically inserted here -->
+                    </ul>
+
+                </div>
+            </div>    
+        </div>
+    </div>   
+    <form id="item-form">
+        <button type="button" id="close-item-form-btn">&times;</button>
+        <h2>Add New Item</h2>
+        <input type="text" id="item-name" name="item-name" placeholder="Name" required>
+        <input type="text" id="item-set" name="item-set" placeholder="Series / Set">
+        <label for="item-status">Status:</label>
+        <select id="item-status" name="item-status">
+            <option value="Owned">Owned</option>
+            <option value="Wishlist">Wishlist</option>
+            <option value="Ordered">Ordered</option>
+        </select>
+        <input type="number" id="item-quantity" name="item-quantity" default="1" placeholder="Quantity">
+        <input type="number" id="item-value" name="item-value" placeholder="Value (£)" step="0.01" min="0">
+        <label for="item-acquired-date">Acquired Date:</label>
+        <input type="date" id="item-acquired-date" name="item-acquired-date">
+        <textarea id="item-notes" name="item-notes" placeholder="Notes"></textarea>
+        <button type="submit" id="save-item-btn">Save Item</button>
+    </form> 
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
